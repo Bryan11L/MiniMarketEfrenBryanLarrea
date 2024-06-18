@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-4">Minimarket Inventory</h1>
+        <h1 class="text-2xl font-bold mb-4">Minimarket Inventario</h1>
         <form id="productForm" class="space-y-4" method="POST">
             <div>
                 <label for="productName" class="block text-sm font-medium text-gray-700">Nombre del Producto</label>
@@ -56,17 +56,18 @@
 
             // Función para mostrar la tabla de productos
             function mostrarTabla($productos) {
-                echo "<table class='min-w-full divide-y divide-gray-200 mt-6'>";
+                echo "<div class='overflow-x-auto'>";
+                echo "<table class='w-full divide-y divide-gray-200'>";
                 echo "<thead class='bg-gray-50'>";
                 echo "<tr>";
-                echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Nombre del Producto</th>";
-                echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Precio por Unidad</th>";
-                echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Cantidad de Inventario</th>";
-                echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Valor Total</th>";
-                echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Estado</th>";
+                echo "<th scope='col' class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Nombre del Producto</th>";
+                echo "<th scope='col' class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Precio por Unidad</th>";
+                echo "<th scope='col' class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Cantidad de Inventario</th>";
+                echo "<th scope='col' class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Valor Total</th>";
+                echo "<th scope='col' class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Estado</th>";
                 echo "</tr>";
                 echo "</thead>";
-                echo "<tbody class='bg-white divide-y divide-gray-200'>";
+                echo "<tbody class='divide-y divide-gray-200'>";
                 foreach ($productos as $producto) {
                     echo "<tr>";
                     echo "<td class='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900'>{$producto['nombre']}</td>";
@@ -78,7 +79,12 @@
                 }
                 echo "</tbody>";
                 echo "</table>";
+                echo "</div>";
             }
+            
+                echo "</tbody>";
+                echo "</table>";
+            
 
             // Mostrar la tabla si hay productos
             if (!empty($productos)) {
