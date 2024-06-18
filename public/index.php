@@ -45,11 +45,13 @@
                 $nombre = $_POST['productName'];
                 $precio = floatval($_POST['unitPrice']);
                 $cantidad = intval($_POST['quantity']);
-
+            
                 // Validar los datos ingresados
                 if (!empty($nombre) && $precio > 0 && $cantidad >= 0) {
+                    // Agregar el producto al array de productos
                     agregarProducto($productos, $nombre, $precio, $cantidad);
                 } else {
+                    // Mostrar un mensaje de error si los datos no son válidos
                     echo "<p class='text-red-500'>Error: Datos inválidos.</p>";
                 }
             }
